@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: disturbed-lamarr
+  name: modest-carlsson
   namespace: default
-  labels: {app: nextflow, runName: disturbed-lamarr}
+  labels: {app: nextflow, runName: modest-carlsson}
 spec:
   restartPolicy: Never
   containers:
-  - name: disturbed-lamarr
+  - name: modest-carlsson
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name disturbed-lamarr -r master]
+        -name modest-carlsson -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-d1965238}
+    configMap: {name: nf-config-1fdd7024}
