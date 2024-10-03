@@ -26,12 +26,7 @@ process download_and_compress {
         vdb-config --prefetch-to-cwd
         vdb-config --set \"/repository/user/main/public/root=/workspace/sra_cache\"
         vdb-config --list
-
-        # Process the identifiers file
         while IFS= read -r id; do
-            if [ -z \"\$id\" ]; then
-                continue
-            fi
             echo \"Processing identifier: \$id\"
             fasterq-dump \$id -O . --split-files --stdout | gzip > \${id}_output.fastq.gz
             if [ \$? -eq 0 ]; then
