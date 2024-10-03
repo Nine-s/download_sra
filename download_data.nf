@@ -15,18 +15,18 @@ process download_and_compress {
     apt update -y
     apt install ca-certificates -y
 
-    useradd -ms /bin/bash myuser
+    useradd -ms /bin/bash myusertest
     # Create a non-root user and switch to it
-    useradd -ms /bin/bash myuser
+    useradd -ms /bin/bash myusertest
     su - myusertest -c "
         # Set up directories and permissions
-        mkdir -p \$HOME/sra_cache
-        chmod 777 \$HOME/sra_cache
-        export VDB_CONFIG=\$HOME/.ncbi
+        mkdir -p /workspace/sra_cache
+        chmod 777 /workspace/sra_cache
+        export VDB_CONFIG=/workspace/.ncbi
 
         # Configure SRA Toolkit
         vdb-config --prefetch-to-cwd
-        vdb-config --set \"/repository/user/main/public/root=\$HOME/sra_cache\"
+        vdb-config --set \"/repository/user/main/public/root=/workspace/sra_cache\"
         vdb-config --list
 
         # Process the identifiers file
