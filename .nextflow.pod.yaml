@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: gloomy-montalcini
+  name: loving-wozniak
   namespace: default
-  labels: {app: nextflow, runName: gloomy-montalcini}
+  labels: {app: nextflow, runName: loving-wozniak}
 spec:
   restartPolicy: Never
   containers:
-  - name: gloomy-montalcini
+  - name: loving-wozniak
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name gloomy-montalcini -r master]
+        -name loving-wozniak -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-d27a31c1}
+    configMap: {name: nf-config-acc02d27}
