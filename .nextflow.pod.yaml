@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: infallible-saha
+  name: sick-varahamihira
   namespace: default
-  labels: {app: nextflow, runName: infallible-saha}
+  labels: {app: nextflow, runName: sick-varahamihira}
 spec:
   restartPolicy: Never
   containers:
-  - name: infallible-saha
+  - name: sick-varahamihira
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name infallible-saha -r master]
+        -name sick-varahamihira -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-89af4c05}
+    configMap: {name: nf-config-e5065cc6}

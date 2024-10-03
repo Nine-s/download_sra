@@ -14,6 +14,12 @@ process download_and_compress {
     """
     apt update -y
     apt install ca-certificates -y
+
+
+    export VDB_CONFIG="$HOME/.ncbi"
+    vdb-config --prefetch-to-cwd
+    vdb-config --set "/repository/user/main/public/root=$HOME/sra_cache"
+    vdb-config --list
     
     while IFS= read -r id; do
 
