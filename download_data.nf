@@ -18,7 +18,7 @@ process download_and_compress {
     useradd -ms /bin/bash myuser
     # Create a non-root user and switch to it
     useradd -ms /bin/bash myuser
-    su - myuser -c "
+    su - myusertest -c "
         # Set up directories and permissions
         mkdir -p \$HOME/sra_cache
         chmod 777 \$HOME/sra_cache
