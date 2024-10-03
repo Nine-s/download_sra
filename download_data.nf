@@ -45,6 +45,38 @@ process download_and_compress {
     """
 }
 
+
+process download_compress {
+    label 'ALL'
+    container 'pegi3s/sratoolkit::3.1.0'
+    
+    input:
+    path identifiers_file 
+
+    output:
+    file("_*.fastq.gz")
+
+    script:
+    """
+    apt update -y
+    apt install ca-certificates -y
+    while IFS= read -r id; do
+        echo "Processing identifier: \$id"
+        # Download and compress the file directly to the original working directory
+        fasterq-dump \$id --split-files --stdout | gzip > /workspace/\${id}_output.fastq.gz
+
+        # Check for success
+        if [ \$? -eq 0 ]; then
+            echo "Download and compression completed for \$id"
+        else
+            echo "Error occurred with \$id"
+        fi
+    done < ${identifiers_file}  # Use the identifiers file path correctly
+    """
+}
+
+
+
 workflow {
-    download_and_compress(params.identifiers)
+    download_compress(params.identifiers)
 }
