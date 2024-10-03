@@ -11,8 +11,8 @@ process download_and_compress {
     file("${id}_*.fastq.gz")
     script:
     """
-    apt update
-    apt install ca-certificates
+    apt update -y
+    apt install ca-certificates -y
     fasterq-dump $id -O . --split-files --stdout | gzip > ${id}_output.fastq.gz
     """
 }
@@ -22,6 +22,6 @@ workflow {
                       .splitText()
 
     file_ids
-        | map { id -> id.trim() }  // Clean up any surrounding whitespace
+        | map { id -> id.trim() } 
         | download_and_compress
 }

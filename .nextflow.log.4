@@ -1,26 +1,26 @@
-Oct-03 15:13:53.860 [main] DEBUG nextflow.cli.Launcher - $> nextflow kuberun Nine-s/download_sra/download_data.nf -r master -c nextflow.config -v nextflow-ninon
-Oct-03 15:13:54.002 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ninon/.nextflow/plugins; core-plugins: nf-amazon@2.7.0,nf-azure@1.8.1,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.14.0,nf-tower@1.9.2,nf-wave@1.5.0
-Oct-03 15:13:54.027 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Oct-03 15:13:54.028 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Oct-03 15:13:54.032 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
-Oct-03 15:13:54.048 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Oct-03 15:13:54.061 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ninon/.nextflow/scm
-Oct-03 15:13:54.096 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
-Oct-03 15:13:54.110 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/Nine-s/download_sra/contents/nextflow.config
-Oct-03 15:13:54.854 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/ninon/compression_project/daw_data/nextflow.config
-Oct-03 15:13:54.860 [main] DEBUG nextflow.config.ConfigBuilder - User config file: https://github.com/Nine-s/download_sra/nextflow.config
-Oct-03 15:13:54.861 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ninon/compression_project/daw_data/nextflow.config
-Oct-03 15:13:54.863 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ninon/compression_project/daw_data/nextflow.config
-Oct-03 15:13:54.864 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: https://github.com/Nine-s/download_sra/nextflow.config
-Oct-03 15:13:54.865 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ninon/compression_project/daw_data/nextflow.config
-Oct-03 15:13:54.888 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ninon/.nextflow/secrets/store.json
-Oct-03 15:13:54.891 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@8bffb8b] - activable => nextflow.secret.LocalSecretsProvider@8bffb8b
-Oct-03 15:13:54.897 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Oct-03 15:13:55.443 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Oct-03 15:13:55.460 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Oct-03 15:13:55.555 [main] DEBUG nextflow.k8s.K8sConfig - Kubernetes workDir=/workspace/ninon/work; projectDir=/workspace/projects; volumeClaims=[nextflow-ninon]
-Oct-03 15:13:55.774 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ninon/.nextflow/scm
-Oct-03 15:13:55.951 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Created K8s configMap with name: nf-config-a22e314e
-Oct-03 15:13:56.017 [main] INFO  nextflow.k8s.K8sDriverLauncher - Launcher pod spec file: .nextflow.pod.yaml
-Oct-03 15:14:15.054 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Wait for pod termination name=chaotic-lalande
-Oct-03 15:14:15.677 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Deleted K8s configMap with name: nf-config-a22e314e
+Oct-03 15:30:39.713 [main] DEBUG nextflow.cli.Launcher - $> nextflow kuberun Nine-s/download_sra/download_data.nf -r master -c nextflow.config -v nextflow-ninon
+Oct-03 15:30:39.854 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ninon/.nextflow/plugins; core-plugins: nf-amazon@2.7.0,nf-azure@1.8.1,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.14.0,nf-tower@1.9.2,nf-wave@1.5.0
+Oct-03 15:30:39.877 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-03 15:30:39.878 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-03 15:30:39.882 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Oct-03 15:30:39.895 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-03 15:30:39.908 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ninon/.nextflow/scm
+Oct-03 15:30:39.938 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Oct-03 15:30:39.951 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/Nine-s/download_sra/contents/nextflow.config
+Oct-03 15:30:40.838 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/ninon/compression_project/daw_data/nextflow.config
+Oct-03 15:30:40.845 [main] DEBUG nextflow.config.ConfigBuilder - User config file: https://github.com/Nine-s/download_sra/nextflow.config
+Oct-03 15:30:40.845 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ninon/compression_project/daw_data/nextflow.config
+Oct-03 15:30:40.847 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ninon/compression_project/daw_data/nextflow.config
+Oct-03 15:30:40.848 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: https://github.com/Nine-s/download_sra/nextflow.config
+Oct-03 15:30:40.849 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ninon/compression_project/daw_data/nextflow.config
+Oct-03 15:30:40.880 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ninon/.nextflow/secrets/store.json
+Oct-03 15:30:40.884 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@8bffb8b] - activable => nextflow.secret.LocalSecretsProvider@8bffb8b
+Oct-03 15:30:40.892 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Oct-03 15:30:41.460 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Oct-03 15:30:41.475 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Oct-03 15:30:41.564 [main] DEBUG nextflow.k8s.K8sConfig - Kubernetes workDir=/workspace/ninon/work; projectDir=/workspace/projects; volumeClaims=[nextflow-ninon]
+Oct-03 15:30:41.780 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ninon/.nextflow/scm
+Oct-03 15:30:41.968 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Created K8s configMap with name: nf-config-5b885920
+Oct-03 15:30:42.034 [main] INFO  nextflow.k8s.K8sDriverLauncher - Launcher pod spec file: .nextflow.pod.yaml
+Oct-03 15:30:55.707 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Wait for pod termination name=insane-watson
+Oct-03 15:30:56.274 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Deleted K8s configMap with name: nf-config-5b885920
