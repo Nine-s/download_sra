@@ -8,8 +8,7 @@ process download_and_compress {
     val id
 
     output:
-    file("${id}_*.fastq.gz") into compressed_files
-
+    file("${id}_*.fastq.gz")
     script:
     """
     apt update
