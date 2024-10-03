@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: boring-knuth
+  name: hungry-escher
   namespace: default
-  labels: {app: nextflow, runName: boring-knuth}
+  labels: {app: nextflow, runName: hungry-escher}
 spec:
   restartPolicy: Never
   containers:
-  - name: boring-knuth
+  - name: hungry-escher
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name boring-knuth -r master]
+        -name hungry-escher -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-8c1ae674}
+    configMap: {name: nf-config-c677b74c}

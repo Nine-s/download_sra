@@ -5,23 +5,35 @@ process download_and_compress {
     container 'ubuntu'
     
     input:
-    val id
+    file id
 
     output:
     file("${id}_*.fastq.gz")
+
     script:
     """
     apt update -y
     apt install ca-certificates -y
-    fasterq-dump $id -O . --split-files --stdout | gzip > ${id}_output.fastq.gz
+    
+    while IFS= read -r id; do
+
+        if [ -z "\$id" ]; then
+            continue
+        fi
+
+        echo "Processing identifier: \$id"
+        fasterq-dump \$id -O . --split-files --stdout | gzip > \${id}_output.fastq.gz
+
+        if [ \$? -eq 0 ]; then
+            echo "Download and compression completed for \$id"
+        else
+            echo "Error occurred with \$id"
+        fi
+
+    done < ${identifiers_file}
     """
 }
 
 workflow {
-    file_ids = Channel.fromPath(params.identifiers)
-                      .splitText()
-
-    file_ids
-        | map { id -> id.trim() } 
-        | download_and_compress
+    download_and_compress(params.identifiers)
 }
