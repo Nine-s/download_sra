@@ -19,5 +19,10 @@ process download_and_compress {
 }
 
 workflow {
-    download_and_compress
+    file_ids = Channel.fromPath(params.identifiers)
+                      .splitText()
+
+    file_ids
+        | map { id -> id.trim() }  // Clean up any surrounding whitespace
+        | download_and_compress
 }

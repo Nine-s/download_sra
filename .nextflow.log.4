@@ -1,0 +1,10 @@
+Oct-03 12:26:42.688 [main] DEBUG nextflow.cli.Launcher - $> nextflow kuberun download_data.nf -c nextflow.config
+Oct-03 12:26:42.840 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: The k8s executor cannot run local script: download_data.nf -- provide the absolute path of a project available in the Kubernetes cluster or the URL of a project hosted in a Git repository
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.k8s.K8sDriverLauncher.makeConfig(K8sDriverLauncher.groovy:303)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.k8s.K8sDriverLauncher.run(K8sDriverLauncher.groovy:149)
+	at nextflow.cli.CmdKubeRun.run(CmdKubeRun.groovy:97)
+	at nextflow.cli.Launcher.run(Launcher.groovy:503)
+	at nextflow.cli.Launcher.main(Launcher.groovy:657)
