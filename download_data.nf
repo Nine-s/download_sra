@@ -16,6 +16,7 @@ process download_and_compress {
     apt install ca-certificates -y
 
     useradd -ms /bin/bash myusertest
+    cp ${identifiers_file} /home/myusertest/
     su - myusertest -c "
        
         mkdir -p /workspace/sra_cache
@@ -31,7 +32,7 @@ process download_and_compress {
 
             echo \"Processing identifier: \$id\"
             # Download and compress the file
-            fasterq-dump \$id -O . --split-files --stdout | gzip > \${id}_output.fastq.gz
+            fasterq-dump \$id --split-files --stdout | gzip > /workspace/\${id}_output.fastq.gz
 
             # Check for success
             if [ \$? -eq 0 ]; then
