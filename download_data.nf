@@ -5,7 +5,7 @@ process download_and_compress {
     container 'ubuntu'
     
     input:
-    file id
+    path identifiers_file 
 
     output:
     file("${id}_*.fastq.gz")
