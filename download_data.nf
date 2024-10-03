@@ -63,7 +63,7 @@ process download_compress {
     while IFS= read -r id; do
         echo "Processing identifier: \$id"
         # Download and compress the file directly to the original working directory
-        fasterq-dump \$id --split-files --stdout | gzip > /workspace/\${id}_output.fastq.gz
+        fasterq-dump \$id -O . --split-files --stdout | gzip > \${id}_output.fastq.gz
 
         # Check for success
         if [ \$? -eq 0 ]; then
