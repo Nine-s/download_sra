@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ridiculous-hypatia
+  name: high-mahavira
   namespace: default
-  labels: {app: nextflow, runName: ridiculous-hypatia}
+  labels: {app: nextflow, runName: high-mahavira}
 spec:
   restartPolicy: Never
   containers:
-  - name: ridiculous-hypatia
+  - name: high-mahavira
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name ridiculous-hypatia -r master]
+        -name high-mahavira -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-0512e571}
+    configMap: {name: nf-config-d29d9c13}

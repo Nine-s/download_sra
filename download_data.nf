@@ -5,7 +5,7 @@ process download_and_compress {
     container 'ubuntu'
     
     input:
-    val id from file(params.identifiers)
+    val id
 
     output:
     file("${id}_*.fastq.gz") into compressed_files
