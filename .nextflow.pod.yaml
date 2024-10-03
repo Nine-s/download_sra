@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: gigantic-laplace
+  name: fabulous-faraday
   namespace: default
-  labels: {app: nextflow, runName: gigantic-laplace}
+  labels: {app: nextflow, runName: fabulous-faraday}
 spec:
   restartPolicy: Never
   containers:
-  - name: gigantic-laplace
+  - name: fabulous-faraday
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name gigantic-laplace -r master]
+        -name fabulous-faraday -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-d3036697}
+    configMap: {name: nf-config-08c69d56}
