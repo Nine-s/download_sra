@@ -15,7 +15,6 @@ process download_and_compress {
     apt update -y
     apt install ca-certificates -y
 
-    useradd -ms /bin/bash myusertest
     # Create a non-root user and switch to it
     useradd -ms /bin/bash myusertest
     su - myusertest -c "

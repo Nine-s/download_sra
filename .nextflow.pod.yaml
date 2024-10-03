@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: distracted-fermi
+  name: scruffy-leibniz
   namespace: default
-  labels: {app: nextflow, runName: distracted-fermi}
+  labels: {app: nextflow, runName: scruffy-leibniz}
 spec:
   restartPolicy: Never
   containers:
-  - name: distracted-fermi
+  - name: scruffy-leibniz
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name distracted-fermi -r master]
+        -name scruffy-leibniz -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-2067d548}
+    configMap: {name: nf-config-661e1325}
