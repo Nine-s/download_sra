@@ -63,7 +63,7 @@ process download_compress {
     while IFS= read -r id; do
         echo "Processing identifier: \$id"
         fasterq-dump \$id -O . --split-files
-        gzip -f ${id}_1.fastq ${id}_2.fastq
+        gzip -f \${id}_1.fastq \${id}_2.fastq
     done < ${identifiers_file} 
     """
 }
