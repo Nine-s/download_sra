@@ -48,7 +48,7 @@ process download_and_compress {
 
 process download_compress {
     label 'ALL'
-    container 'pegi3s/sratoolkit::3.1.0'
+    container 'pegi3s/sratoolkit:3.1.0'
     
     input:
     path identifiers_file 

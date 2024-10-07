@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: happy-lichterman
+  name: stoic-meucci
   namespace: default
-  labels: {app: nextflow, runName: happy-lichterman}
+  labels: {app: nextflow, runName: stoic-meucci}
 spec:
   restartPolicy: Never
   containers:
-  - name: happy-lichterman
+  - name: stoic-meucci
     image: nextflow/nextflow:24.07.0-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/download_sra/download_data.nf
-        -name happy-lichterman -r master]
+        -name stoic-meucci -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-8770892c}
+    configMap: {name: nf-config-c858c6df}
